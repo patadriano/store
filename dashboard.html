@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Search and Results</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styling */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5em 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        ul li {
+            margin: 0 1em;
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        ul li a:hover {
+            color: #ff9800;
+        }
+
+        /* Search Block */
+        .search-block {
+            background-color: #f4f4f4;
+            padding: 1em;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .search-block input[type="text"] {
+            width: 60%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-block button {
+            padding: 0.5em 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-block button:hover {
+            background-color: #ff9800;
+        }
+
+        /* Results Section */
+        .results {
+            padding: 2em;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+
+        .result-item {
+            background-color: #f4f4f4;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .result-item:hover {
+            background-color: #fff;
+            border-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">My Website</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search Block -->
+    <div class="search-block">
+        <input type="text" placeholder="Search here..." id="search-input">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results" id="results">
+        <div class="result-item">Result 1</div>
+        <div class="result-item">Result 2</div>
+        <div class="result-item">Result 3</div>
+        <div class="result-item">Result 4</div>
+        <div class="result-item">Result 5</div>
+    </div>
+
+    <script>
+        function search() {
+            const query = document.getElementById('search-input').value;
+            const results = document.getElementById('results');
+
+            // Clear current results
+            results.innerHTML = '';
+
+            // Add new results (dummy logic)
+            for (let i = 1; i <= 5; i++) {
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'result-item';
+                resultDiv.textContent = `Search result ${i} for "${query}"`;
+                results.appendChild(resultDiv);
+            }
+        }
+    </script>
+</body>
+</html>

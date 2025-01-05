@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Simple Page</title>
+    <style>
+        /* Universal reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Full viewport height */
+            background-color: #f0f0f0;
+            padding: 0 1rem; /* Padding for better spacing on smaller screens */
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        /* Navbar */
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Main Content */
+        main {
+            height: calc(100vh - 60px); /* Subtract the header height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+        }
+
+        section {
+            text-align: center;
+        }
+
+        /* Responsive design using media queries */
+        /* For small devices like smartphones */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column; /* Stack the navbar links */
+                align-items: center;
+            }
+
+            main {
+                height: auto; /* Allow content to grow vertically */
+                padding: 2rem 0;
+            }
+
+            h1 {
+                font-size: 1.5rem; /* Make the title smaller on small screens */
+            }
+
+            p {
+                font-size: 1rem; /* Smaller text for smaller screens */
+            }
+        }
+
+        /* For tablets and larger phones */
+        @media (min-width: 600px) and (max-width: 1024px) {
+            nav ul {
+                flex-direction: row; /* Keep the navbar horizontal */
+                justify-content: space-evenly;
+            }
+
+            main {
+                padding: 3rem 0;
+            }
+        }
+      .post-header{
+      	background-color:white;
+      	padding:10px;
+      }
+      .post-body{
+      	background-color:white;
+      	padding:10px;
+      }
+      .post-footer{
+      	background-color:white;
+      	padding:5px;
+      	display:flex;
+      justify-content:flex-end;
+      
+      }
+      .save-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .save-button:hover {
+        background-color: darkgreen;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="post">
+          <div class="post-header">
+            <h6>ADD POST</h6>
+          </div>
+          <div class="post-body">
+            
+        <!-- Title -->
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter title here">
+		<br>
+        <!-- Item Description -->
+        <label for="description">Item Description:</label>
+        <input type="text" id="description" name="description" placeholder="Enter description here">
+		<br>
+        <!-- Image Source -->
+        <label for="image">Image Source:</label>
+        <input type="text" id="image" name="image" placeholder="Enter image URL here">
+		<br>
+          </div>
+          <div class="post-footer">
+            <button class="save-button">Save</button>
+          </div>
+        </div>
+    </main>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Simple Page</title>
+    <style>
+        /* Universal reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh; /* Full viewport height, no need to subtract */
+            background-color: #f0f0f0;
+            padding: 0 1rem; /* Padding for better spacing on smaller screens */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        /* Navbar */
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Main Content */
+        main {
+            flex-grow: 1; /* Allow main to take remaining space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+        }
+
+        section {
+            text-align: center;
+        }
+
+        /* Responsive design using media queries */
+        /* For small devices like smartphones */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column; /* Stack the navbar links */
+                align-items: center;
+            }
+
+            main {
+                height: auto; /* Allow content to grow vertically */
+                padding: 2rem 0;
+            }
+
+            h1 {
+                font-size: 1.5rem; /* Make the title smaller on small screens */
+            }
+
+            p {
+                font-size: 1rem; /* Smaller text for smaller screens */
+            }
+        }
+
+        /* For tablets and larger phones */
+        @media (min-width: 600px) and (max-width: 1024px) {
+            nav ul {
+                flex-direction: row; /* Keep the navbar horizontal */
+                justify-content: space-evenly;
+            }
+
+            main {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Welcome to the Page</h1>
+            <p>This is a simple webpage with responsive design.</p>
+        </section>
+    </main>
+</body>
+</html> -->

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        /* Profile section */
+        .profile-container {
+            background-color: #f4f4f4;
+            padding: 2em;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile {
+            background-color: white;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .profile-image img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            text-align: left;
+            width: 100%;
+        }
+
+        .profile-info h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .profile-info p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .profile-info strong {
+            font-weight: bold;
+        }
+
+        .profile-button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .profile-button:hover {
+            background-color: #555;
+        }
+
+        /* Posts Grid Section */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5em;
+            padding: 2em;
+        }
+
+        .post {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .post h3 {
+            margin-top: 1em;
+            font-size: 1.5em;
+        }
+
+        .post p {
+            font-size: 1em;
+            margin-top: 0.5em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">My Website</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-container">
+        <div class="profile">
+            <!-- Profile Image -->
+            <div class="profile-image">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture">
+                  <h1>John Doe</h1>
+            </div>
+
+            <!-- Profile Info (Text) -->
+            <div class="profile-info">
+                <!-- Posts Grid Inside Profile Info -->
+                <div class="posts-grid">
+                    <div class="post">
+                        <img src="https://via.placeholder.com/500" alt="Post Image">
+                        <h3>Post Title 1</h3>
+                        <p>This is the description for the first post. It gives a quick overview of the content.</p>
+                    </div>
+                    <div class="post">
+                        <img src="https://via.placeholder.com/500" alt="Post Image">
+                        <h3>Post Title 2</h3>
+                        <p>This is the description for the second post. It provides some details about what this post covers.</p>
+                    </div>
+                    <div class="post">
+                        <img src="https://via.placeholder.com/500" alt="Post Image">
+                        <h3>Post Title 3</h3>
+                        <p>This is the description for the third post. Here, you can learn more about the topic covered in the post.</p>
+                    </div>
+                    <div class="post">
+                        <img src="https://via.placeholder.com/500" alt="Post Image">
+                        <h3>Post Title 4</h3>
+                        <p>This is the description for the fourth post. It gives a sneak peek into the article's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
