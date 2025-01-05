@@ -1,0 +1,237 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+    ul li {
+        margin: 0 1em;
+    }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            ul li a:hover {
+                color: #ff9800;
+            }
+
+
+/* Search Block */
+.search-block {
+    background-color: #f4f4f4;
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+    .search-block input[type="text"] {
+        width: 60%;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-block button {
+        padding: 0.5em 1em;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .search-block button:hover {
+            background-color: #ff9800;
+        }
+
+/* Results Section */
+.results {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.result-item {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+    .result-item:hover {
+        background-color: #fff;
+        border-color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.profile-container {
+    background-color: #f4f4f4;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+/* Profile section */
+
+.profile {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    max-width: 900px;
+    width: 100%;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: left;
+    width: 100%;
+}
+
+    .profile-info h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .profile-info p {
+        font-size: 1.2em;
+        margin: 0.5em 0;
+    }
+
+    .profile-info strong {
+        font-weight: bold;
+    }
+
+.profile-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .profile-button:hover {
+        background-color: #555;
+    }
+
+/* Posts Grid Section */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5em;
+    padding: 2em;
+}
+
+.post {
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .post img {
+        width: 50px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .post h3 {
+        margin-top: 1em;
+        font-size: 1.5em;
+    }
+
+    .post p {
+        font-size: 1em;
+        margin-top: 0.5em;
+    }
+
+/* Search Block */
+.search-block {
+    background-color: #f4f4f4;
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+    .search-block input[type="text"] {
+        width: 60%;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-block button {
+        padding: 0.5em 1em;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .search-block button:hover {
+            background-color: #ff9800;
+        }
+
+/* Results Section */
+.results {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.result-item {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+    .result-item:hover {
+        background-color: #fff;
+        border-color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+</style >
