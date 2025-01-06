@@ -67,30 +67,58 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-
-        <%--<div class="post">
-          <div class="post-header">
-            <h6>ADD POST</h6>
-          </div>
-          <div class="post-body">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
+    <ContentTemplate>
+        <div id="modal" runat="server" class="post" visible="false" style="display: block; z-index: ; background-color: rgba(0, 0, 0, 0.37); overflow-y: auto;" autopostback="true">
+              <div class="post-header">
+                <h6>ADD POST</h6>
+              </div>
+              <div class="post-body">
             
-        <!-- Title -->
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" placeholder="Enter title here">
-		<br>
-        <!-- Item Description -->
-        <label for="description">Item Description:</label>
-        <input type="text" id="description" name="description" placeholder="Enter description here">
-		<br>
-        <!-- Image Source -->
-        <label for="image">Image Source:</label>
-        <input type="text" id="image" name="image" placeholder="Enter image URL here">
-		<br>
-          </div>
-          <div class="post-footer">
-            <button class="save-button">Save</button>
-          </div>
-        </div>--%>
+                <!-- Title -->
+                <asp:Label ID="lblItemTitle" runat="server"></asp:Label>
+                <asp:TextBox ID="txtItemTitle" runat="server" Placeholder="Product Title"></asp:TextBox>
+                <%--<input type="text" id="title" name="title" placeholder="Enter title here">--%>
+		        <br>
+                <!-- Item Description -->
+             
+                <asp:Label ID="lblItemDesc" runat="server"></asp:Label>
+                <asp:TextBox ID="txtItemDesc" runat="server" TextMode="MultiLine" Rows="4" Columns="50"></asp:TextBox>
+
+		        <br>
+                <!-- Image Source -->
+                 <asp:Label ID="lblImgSrc" runat="server"></asp:Label>
+                 <asp:FileUpload ID="fileUpload" runat="server" />
+		        <br>
+              </div>
+              <div class="post-footer">
+                <button id="btnSave" class="save-button" runat="server" onclick="btnSave_Click">Save</button>
+              </div>
+        </div>
+        </ContentTemplate>
+</asp:UpdatePanel>
+
+        <%-- <asp:Button runat="server" ID="btnpop" Text="pop" OnClick="btnpop_Click" />--%>
+
+ <%--<asp:UpdatePanel runat="server">
+     <ContentTemplate>
+         <!-- Modal as Panel -->
+         <asp:Panel ID="popupModal" runat="server" Visible="false" CssClass="popup-container">
+             <div class="popup-content">
+                 <div class="popup-header">
+                     <h4>Popup Title</h4>
+                     <button class="close-btn" OnClick="btnClose_Click">×</button>
+                 </div>
+                 <div class="popup-body">
+                     <p>This is the content inside the popup modal.</p>
+                 </div>
+                 <div class="popup-footer">
+                     <button class="btn btn-success" OnClick="btnClose_Click">Close</button>
+                 </div>
+             </div>
+         </asp:Panel>
+     </ContentTemplate>
+ </asp:UpdatePanel>--%>
 
     </form>
     <asp:PlaceHolder runat="server">
