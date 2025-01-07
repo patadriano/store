@@ -92,33 +92,13 @@
 		        <br>
               </div>
               <div class="post-footer">
-                <button id="btnSave" class="save-button" runat="server" onclick="btnSave_Click">Save</button>
+                
+                   <asp:Button runat="server" ID="btnSave" Text="Save" OnClick="btnSave_Click" />
               </div>
         </div>
         </ContentTemplate>
 </asp:UpdatePanel>
 
-        <%-- <asp:Button runat="server" ID="btnpop" Text="pop" OnClick="btnpop_Click" />--%>
-
- <%--<asp:UpdatePanel runat="server">
-     <ContentTemplate>
-         <!-- Modal as Panel -->
-         <asp:Panel ID="popupModal" runat="server" Visible="false" CssClass="popup-container">
-             <div class="popup-content">
-                 <div class="popup-header">
-                     <h4>Popup Title</h4>
-                     <button class="close-btn" OnClick="btnClose_Click">×</button>
-                 </div>
-                 <div class="popup-body">
-                     <p>This is the content inside the popup modal.</p>
-                 </div>
-                 <div class="popup-footer">
-                     <button class="btn btn-success" OnClick="btnClose_Click">Close</button>
-                 </div>
-             </div>
-         </asp:Panel>
-     </ContentTemplate>
- </asp:UpdatePanel>--%>
 
     </form>
     <asp:PlaceHolder runat="server">

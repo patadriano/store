@@ -27,11 +27,12 @@ namespace Store
         }
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            Posts post = new Posts();
-            //post.PostID =
-            post.PostTitle = txtItemTitle.Text;
-            post.PostDesc = txtItemDesc.Text;
-            //post.PostImage = 
+            modal.Visible = false;
+            //Posts post = new Posts();
+            ////post.PostID =
+            //post.PostTitle = txtItemTitle.Text;
+            //post.PostDesc = txtItemDesc.Text;
+            ////post.PostImage = 
 
             if (fileUpload.HasFile)
             {
@@ -53,7 +54,7 @@ namespace Store
                         {
                             cmd.Parameters.AddWithValue("@Title", txtItemTitle.Text);
                             cmd.Parameters.AddWithValue("@Desc", txtItemDesc.Text);
-                            cmd.Parameters.AddWithValue("@Image", imageBytes); 
+                            cmd.Parameters.AddWithValue("@Image", imageBytes);
 
                             conn.Open();
                             cmd.ExecuteNonQuery();
@@ -61,16 +62,16 @@ namespace Store
                         }
                     }
 
-                   
+
                 }
                 catch (Exception ex)
                 {
-                   
+
                 }
             }
             else
             {
-                
+
             }
 
         }

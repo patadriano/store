@@ -14,9 +14,10 @@ namespace Store
     }
     public class Posts
     {
-        public string PostID { get; set; }  
+        public int PostID { get; set; }  
         public string PostTitle { get; set; }
         public string PostDesc { get; set; }
+        //public byte[] PostImage { get; set; }
         public string PostImage { get; set; }
         public User UserID { get; set; }
     }
