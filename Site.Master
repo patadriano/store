@@ -67,9 +67,9 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
-    <ContentTemplate>
-        <div id="modal" runat="server" class="post" visible="false" style="display: block; z-index: ; background-color: rgba(0, 0, 0, 0.37); overflow-y: auto;" autopostback="true">
+        <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
+    <ContentTemplate>--%>
+        <div id="modal" runat="server" class="post" visible="false" style="display: block; position: fixed; z-index: 1;  left: 50%; top:  50%; transform: translateX(-50%); translateY(-50%); background-color: rgba(0, 0, 0, 0.37); overflow-y: auto;" autopostback="true">
               <div class="post-header">
                 <h6>ADD POST</h6>
               </div>
@@ -88,16 +88,17 @@
 		        <br>
                 <!-- Image Source -->
                  <asp:Label ID="lblImgSrc" runat="server"></asp:Label>
-                 <asp:FileUpload ID="fileUpload" runat="server" />
+                 <asp:FileUpload ID="FileUpload1" runat="server" />
+                  <asp:Button runat="server" ID="Button1" Text="Save" OnClick="btnSavee_Click" />
 		        <br>
               </div>
               <div class="post-footer">
                 
-                   <asp:Button runat="server" ID="btnSave" Text="Save" OnClick="btnSave_Click" />
+                  <%-- <asp:Button runat="server" ID="btnSave" Text="Save" OnClick="btnSave_Click" />--%>
               </div>
         </div>
-        </ContentTemplate>
-</asp:UpdatePanel>
+    <%--    </ContentTemplate>
+</asp:UpdatePanel>--%>
 
 
     </form>

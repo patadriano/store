@@ -1,6 +1,8 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -19,78 +21,105 @@ namespace Store
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-
+            Session.Clear();   // Clear session data
+            Session.Abandon();
+            Response.Redirect("~/Default.aspx");
         }
         protected void btnAddPost_Click(object sender, EventArgs e)
         {
             modal.Visible = true;
         }
-        protected void btnSave_Click(object sender, EventArgs e)
+        protected void btnSavee_Click(object sender, EventArgs e)
         {
+            StartUpLoad();
+
+            Cache["WTF"] = true;
+
             modal.Visible = false;
-            //Posts post = new Posts();
-            ////post.PostID =
-            //post.PostTitle = txtItemTitle.Text;
-            //post.PostDesc = txtItemDesc.Text;
-            ////post.PostImage = 
+            Response.Redirect("~/Dashboard.aspx", false);
 
-            if (fileUpload.HasFile)
+        }
+        protected void StartUpLoad()
+
+        {
+
+
+            byte[] theImage = new byte[FileUpload1.PostedFile.ContentLength];
+            HttpPostedFile Image = FileUpload1.PostedFile;
+            Image.InputStream.Read(theImage, 0, (int)FileUpload1.PostedFile.ContentLength);
+            int length = theImage.Length;
+            if (FileUpload1.PostedFile != null && FileUpload1.PostedFile.FileName != "")
             {
-                try
-                {
-                    byte[] imageBytes = null;
-                    using (BinaryReader reader = new BinaryReader(fileUpload.PostedFile.InputStream))
-                    {
-                        imageBytes = reader.ReadBytes(fileUpload.PostedFile.ContentLength);
-                    }
-
-                    string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString; ;
-
-                    using (SqlConnection conn = new SqlConnection(connectionString))
-                    {
-                        string sql = "INSERT INTO Posts (PostTitle, PostDesc, PostImage) VALUES (@Title, @Desc, @Image)";
-
-                        using (SqlCommand cmd = new SqlCommand(sql, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@Title", txtItemTitle.Text);
-                            cmd.Parameters.AddWithValue("@Desc", txtItemDesc.Text);
-                            cmd.Parameters.AddWithValue("@Image", imageBytes);
-
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
-                    }
-
-
-                }
-                catch (Exception ex)
-                {
-
-                }
+                ExecuteInsert(theImage, length);
+                Response.Write("Save Successfully!");
             }
-            else
+
+        }
+
+        public string GetConnectionString()
+
+        {
+            return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        }
+
+
+
+        private void ExecuteInsert(byte[] Image, int length)
+        {
+            SqlConnection conn = new SqlConnection(GetConnectionString());
+
+
+
+            string sql = "INSERT INTO Post (PostTitle, PostDesc, PostImage, UserID) VALUES "
+
+                        + " (@PostTitle, @PostDesc, @PostImage, @UserID)";
+
+            try
             {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlParameter[] param = new SqlParameter[4];
+                param[0] = new SqlParameter("@PostTitle", SqlDbType.VarChar, 50);
+                param[1] = new SqlParameter("@PostDesc", SqlDbType.VarChar, 50);
+                param[2] = new SqlParameter("@PostImage", SqlDbType.Image, length);
+                param[3] = new SqlParameter("@UserID", SqlDbType.Int);
+
+
+                param[0].Value = txtItemTitle.Text.ToString();
+                param[1].Value = txtItemDesc.Text.ToString();
+                param[2].Value = Image;
+                param[3].Value = (int)Session["UserID"];
+
+                for (int i = 0; i < param.Length; i++)
+                {
+                    cmd.Parameters.Add(param[i]);
+                }
+
+                cmd.CommandType = CommandType.Text;
+
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (System.Data.SqlClient.SqlException ex)
+
+            {
+                string msg = "Insert Error:";
+
+                msg += ex.Message;
+
+                throw new Exception(msg);
+            }
+
+            finally
+
+            {
+
+                conn.Close();
 
             }
 
         }
-        //protected void btnpop_Click(object sender, EventArgs e)
-        //{
 
-        //    //HtmlGenericControl popupModal = (HtmlGenericControl)FindControl("popupModal");
 
-        //    //// Show the modal by setting its display style to "block"
-        //    //if (popupModal != null)
-        //    //{
-        //    //    popupModal.Style["display"] = "block";
-        //    //} 
-        //    popupModal.Visible = true;
-
-        //}
-        //protected void btnClose_Click(object sender, EventArgs e)
-        //{
-        //    popupModal.Visible = false; // Hide the modal
-        //}
     }
 }

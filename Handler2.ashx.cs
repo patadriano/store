@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
-using System.Data.SqlClient;
-
-using System.Data;
-
-using System.IO;
-
-
 
 namespace Store
 {
     /// <summary>
-    /// Summary description for Handler1
+    /// Summary description for Handler2
     /// </summary>
-    public class Handler1 : IHttpHandler
+    public class Handler2 : IHttpHandler
     {
+
         public string GetConnectionString()
 
         {
-
-            //sets the connection string from your web config file "ConnString" is the name of your Connection String
 
             return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
@@ -43,7 +37,7 @@ namespace Store
 
                 SqlConnection connection = new SqlConnection(GetConnectionString());
 
-                string sql = "SELECT PostImage FROM Post WHERE PostID = @id";
+                string sql = "SELECT ProfileImage FROM Profile WHERE ProfileID = @id";
 
 
 
@@ -66,21 +60,21 @@ namespace Store
 
                     //Get Image Data
 
-                    byte[] file = (byte[])reader["PostImage"];
+                    byte[] file = (byte[])reader["ProfileImage"];
 
 
 
-                reader.Close();
+                    reader.Close();
 
-                connection.Close();
+                    connection.Close();
 
-                memoryStream.Write(file, 0, file.Length);
+                    memoryStream.Write(file, 0, file.Length);
 
-                context.Response.Buffer = true;
+                    context.Response.Buffer = true;
 
-                context.Response.BinaryWrite(file);
+                    context.Response.BinaryWrite(file);
 
-                memoryStream.Dispose();
+                    memoryStream.Dispose();
 
                 }
 
@@ -101,6 +95,5 @@ namespace Store
             }
 
         }
-
     }
 }

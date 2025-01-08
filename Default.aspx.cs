@@ -27,7 +27,7 @@ namespace Store
                 string constring = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constring))
                 {
-                    string query = "SELECT Password FROM [Userss] WHERE Username = @Username";
+                    string query = "SELECT UserID, Password FROM [Userss] WHERE Username = @Username";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@Username", username);
 
@@ -37,10 +37,12 @@ namespace Store
                     {
                         reader.Read();
                         string storedHashedPassword = reader["Password"].ToString();
-                       
+                        string userid = reader["UserID"].ToString();
+
 
                         if (VerifyPassword(enteredPassword, storedHashedPassword))
                         {
+                            Session["UserID"] = userid;
                             Response.Redirect("~/Dashboard.aspx");
                         }
                         else

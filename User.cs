@@ -21,4 +21,12 @@ namespace Store
         public string PostImage { get; set; }
         public User UserID { get; set; }
     }
+    public class ProfileUser
+    {
+        public int ProfileID { get; set; }
+        public string ProfileName { get; set; }
+        public string ProfileImage { get; set; }
+        public int UserID { get; set; }
+
+    }
 }
