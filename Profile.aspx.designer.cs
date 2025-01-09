@@ -15,22 +15,31 @@ namespace Store
     {
 
         /// <summary>
-        /// Results control.
+        /// prfupdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel Results;
+        protected global::System.Web.UI.UpdatePanel prfupdate;
 
         /// <summary>
-        /// Image1 control.
+        /// Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Image Image2;
+
+        /// <summary>
+        /// ProfileNameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProfileNameLabel;
 
         /// <summary>
         /// btnEditProfile control.
@@ -51,13 +60,13 @@ namespace Store
         protected global::System.Web.UI.WebControls.Repeater prfleProducts;
 
         /// <summary>
-        /// modal control.
+        /// moll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl moll;
 
         /// <summary>
         /// txtProfName control.
@@ -69,21 +78,21 @@ namespace Store
         protected global::System.Web.UI.WebControls.TextBox txtProfName;
 
         /// <summary>
-        /// FileUpload1 control.
+        /// FileUpload2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
 
         /// <summary>
-        /// Button1 control.
+        /// Button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button;
     }
 }

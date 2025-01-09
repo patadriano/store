@@ -38,51 +38,37 @@ namespace Store
                 BindRepeater();
             }
         }
+        protected string GetConnectionString()
+        {
+            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            return constring;
+        }
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            // Code to execute when the button is clicked
-            string searchTerm = txtSearch.Text.Trim(); // Get the search term from a TextBox control
+            string searchTerm = txtSearch.Text.Trim();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
                 List<Posts> postList2 = new List<Posts>();
-                // Define your connection string (modify with actual database details)
-                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-
-                // Create a connection to the database
+                string connectionString = GetConnectionString();
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     try
                     {
-                        // Open the connection
                         conn.Open();
-
-                        // Create a SQL command
-                        string query = "SELECT * FROM Post Where PostTitle LIKE @searchTerm"; // Example query
-
+                        string query = "SELECT * FROM Post Where PostTitle LIKE @searchTerm"; 
                         SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
-                        
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Check if there are rows
                             if (reader.HasRows)
                             {
-                                // Read each row
                                 while (reader.Read())
                                 {
-                                    // Access data by column index or name
                                     Posts post = new Posts();
-
-                                    // Access data by column index or name and assign it to the Post object
-                                    post.PostID = reader.GetInt32(0);  // Column 0: PostID
-                                    post.PostTitle = reader.GetString(1);  // Column 1: PostTitle
-                                    post.PostDesc = reader.GetString(2);  // Column 2: PostDesc
-
-                                    // Add the Post object to the list
+                                    post.PostID = reader.GetInt32(0);  
+                                    post.PostTitle = reader.GetString(1);  
+                                    post.PostDesc = reader.GetString(2); 
                                     postList2.Add(post);
-
-
                                 }
                             }
                             else
@@ -94,18 +80,13 @@ namespace Store
                         rptProducts.DataBind();
 
                     }
-                    catch (Exception ex)
-                    {
-
-                    }
-
+                    catch (Exception ex){}
                     Results.Update();
                 }
             }
             else
             {
-                // Optionally, display a message if no search term is entered
-                //lblMessage.Text = "Please enter a search term.";
+               
             }
         }
       
@@ -115,22 +96,14 @@ namespace Store
 
         {
             List<Posts> postList = new List<Posts>();
-            // Define your connection string (modify with actual database details)
-            string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-
-            // Create a connection to the database
+            string connectionString = GetConnectionString();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
-                    // Open the connection
                     conn.Open();
-
-                    // Create a SQL command
                     string query = "SELECT PostID, PostTitle, PostDesc FROM Post"; // Example query
                     SqlCommand cmd = new SqlCommand(query, conn);
-
-                    // Execute the command and get a DataReader
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         // Check if there are rows

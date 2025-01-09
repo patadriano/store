@@ -89,7 +89,7 @@
                 <!-- Image Source -->
                  <asp:Label ID="lblImgSrc" runat="server"></asp:Label>
                  <asp:FileUpload ID="FileUpload1" runat="server" />
-                  <asp:Button runat="server" ID="Button1" Text="Save" OnClick="btnSavee_Click" />
+                  <asp:Button runat="server" ID="ButtonAdd" Text="Save" OnClick="btnAdd_Click" />
 		        <br>
               </div>
               <div class="post-footer">

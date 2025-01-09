@@ -17,7 +17,9 @@ namespace Store
 
         {
 
-            return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            //return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            return constring;
 
         }
 
@@ -37,7 +39,7 @@ namespace Store
 
                 SqlConnection connection = new SqlConnection(GetConnectionString());
 
-                string sql = "SELECT ProfileImage FROM Profile WHERE ProfileID = @id";
+                string sql = "SELECT PrfImage FROM Userss WHERE UserID = @id";
 
 
 
@@ -60,7 +62,7 @@ namespace Store
 
                     //Get Image Data
 
-                    byte[] file = (byte[])reader["ProfileImage"];
+                    byte[] file = (byte[])reader["PrfImage"];
 
 
 

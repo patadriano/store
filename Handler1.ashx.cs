@@ -20,10 +20,9 @@ namespace Store
         public string GetConnectionString()
 
         {
-
-            //sets the connection string from your web config file "ConnString" is the name of your Connection String
-
-            return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            //return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            return constring;
 
         }
 

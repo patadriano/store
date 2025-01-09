@@ -6,12 +6,15 @@
         <div class="profile">
             <!-- Profile Image -->
 
-         <asp:UpdatePanel ID="Results" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
+         <asp:UpdatePanel ID="prfupdate" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
             <ContentTemplate>
                
             <div class="profile-image"> 
-                 <asp:Image ID="Image1" ImageUrl='<%# "~/Handler2.ashx?id=" + Eval("ProfileID") %>' runat="server" />
-                  <h1 style="font-size: 18px; margin: 10px 0;"> <%# Eval("ProfileName") %>></h1>
+                 <asp:Image ID="Image2"  runat="server" />
+                  <h1 style="font-size: 18px; margin: 10px 0;">
+    <asp:Label ID="ProfileNameLabel" runat="server"></asp:Label>
+</h1>
+
                 <asp:Button ID="btnEditProfile" runat="server" Text="Edit Profile" OnClick="btnEdit_Click" />
             </div>
                 </ContentTemplate>
@@ -45,7 +48,7 @@
             </div>
 
             <%--Profile--%>
-             <div id="modal" runat="server" class="post" visible="false" style="display: block; position: fixed; z-index: 1;  left: 50%; top:  50%; transform: translateX(-50%); translateY(-50%); background-color: rgba(0, 0, 0, 0.37); overflow-y: auto;" autopostback="true">
+             <div id="moll" runat="server" class="post" visible="false" style="display: block; position: fixed; z-index: 100;  left: 50%; top:  50%; transform: translateX(-50%); translateY(-50%); background-color: rgba(0, 0, 0, 0.37); overflow-y: auto;" autopostback="true">
        <div class="post-header">
          <h6>EDIT Profile</h6>
        </div>
@@ -56,8 +59,8 @@
          <asp:TextBox ID="txtProfName" runat="server" Placeholder="Profile Name"></asp:TextBox>
          <%--<input type="text" id="title" name="title" placeholder="Enter title here">--%>
 	      <br>
-          <asp:FileUpload ID="FileUpload1" runat="server" />
-          <asp:Button runat="server" ID="Button1" Text="Save" OnClick="btnSavee_Click" />
+          <asp:FileUpload ID="FileUpload2" runat="server" />
+          <asp:Button runat="server" ID="Button" Text="Save" OnClick="btnSavee_Click" />
 	        <br>
        </div>
        <div class="post-footer">

@@ -21,7 +21,7 @@ namespace Store
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            Session.Clear();   // Clear session data
+            Session.Clear();   
             Session.Abandon();
             Response.Redirect("~/Default.aspx");
         }
@@ -29,7 +29,7 @@ namespace Store
         {
             modal.Visible = true;
         }
-        protected void btnSavee_Click(object sender, EventArgs e)
+        protected void btnAdd_Click(object sender, EventArgs e)
         {
             StartUpLoad();
 
@@ -59,7 +59,9 @@ namespace Store
         public string GetConnectionString()
 
         {
-            return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            //return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            return constring;
         }
 
 
@@ -88,7 +90,7 @@ namespace Store
                 param[0].Value = txtItemTitle.Text.ToString();
                 param[1].Value = txtItemDesc.Text.ToString();
                 param[2].Value = Image;
-                param[3].Value = (int)Session["UserID"];
+                param[3].Value = Convert.ToInt32(Session["UserID"]);
 
                 for (int i = 0; i < param.Length; i++)
                 {

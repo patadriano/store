@@ -17,14 +17,19 @@ namespace Store
         {
 
         }
+        protected string GetConnectionString()
+        {
+            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            return constring;
+        }
         protected void Login_Click(object sender, EventArgs e)
         {
             try
             {
                 string username = txtlgnUsername.Text.Trim(); 
-                string enteredPassword = txtlgnPassword.Text.Trim();  
+                string enteredPassword = txtlgnPassword.Text.Trim();
 
-                string constring = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+                string constring = GetConnectionString();
                 using (SqlConnection con = new SqlConnection(constring))
                 {
                     string query = "SELECT UserID, Password FROM [Userss] WHERE Username = @Username";
@@ -67,30 +72,19 @@ namespace Store
         }
         public static string HashPassword(string password)
         {
-            // Create a new SHA256 instance
             using (SHA256 sha256 = SHA256.Create())
             {
-                // Convert the password to a byte array
                 byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-
-                // Compute the hash from the password
                 byte[] hashBytes = sha256.ComputeHash(passwordBytes);
-
-                // Convert the hash to a Base64 string (optional: you could also use Hex format)
                 return Convert.ToBase64String(hashBytes);
             }
         }
 
         public static bool VerifyPassword(string enteredPassword, string storedHash)
         {
-            // Hash the entered password
             string enteredPasswordHash = HashPassword(enteredPassword);
-
-            // Compare the entered password hash with the stored hash
             return enteredPasswordHash == storedHash;
         }
-
-
 
     }
 }
