@@ -17,9 +17,9 @@ namespace Store
 
         {
 
-            //return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
-            return constring;
+            return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            //string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            //return constring;
 
         }
 
@@ -58,25 +58,29 @@ namespace Store
                 if (reader.HasRows)  // Check if there are any rows in the result set
                 {
 
+                    var fileData = reader["PrfImage"];
+
+                    if (fileData != DBNull.Value)
+                    {
+
+                        byte[] file = (byte[])reader["PrfImage"];
 
 
-                    //Get Image Data
 
-                    byte[] file = (byte[])reader["PrfImage"];
+                        reader.Close();
 
+                        connection.Close();
 
+                        memoryStream.Write(file, 0, file.Length);
 
-                    reader.Close();
+                        context.Response.Buffer = true;
 
-                    connection.Close();
+                        context.Response.BinaryWrite(file);
 
-                    memoryStream.Write(file, 0, file.Length);
+                        memoryStream.Dispose();
+                    }
 
-                    context.Response.Buffer = true;
-
-                    context.Response.BinaryWrite(file);
-
-                    memoryStream.Dispose();
+                    
 
                 }
 

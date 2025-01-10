@@ -6,8 +6,8 @@
         <div class="profile">
             <!-- Profile Image -->
 
-         <asp:UpdatePanel ID="prfupdate" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
-            <ContentTemplate>
+         <%--<asp:UpdatePanel ID="prfupdate" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
+            <ContentTemplate>--%>
                
             <div class="profile-image"> 
                  <asp:Image ID="Image2"  runat="server" />
@@ -17,8 +17,7 @@
 
                 <asp:Button ID="btnEditProfile" runat="server" Text="Edit Profile" OnClick="btnEdit_Click" />
             </div>
-                </ContentTemplate>
-          </asp:UpdatePanel>
+                
 
             <!-- Profile Info (Text) -->
              <div>
@@ -70,5 +69,9 @@
  </div>
 
         </div>
+
+
+           <%-- </ContentTemplate>
+          </asp:UpdatePanel>--%>
     </section>
 </asp:Content>

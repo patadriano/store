@@ -1,75 +1,99 @@
-﻿* {
+﻿.dm-serif-text-regular {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.ubuntu-mono-regular {
+    font-family: "Ubuntu Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ultra-regular {
+    font-family: "Ultra", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "DM Serif Text";
 }
 
 body {
     font-family: Arial, sans-serif;
 }
 
+
+
+
 /* Navbar Styling */
 nav {
-    background-color: #333;
-    color: #fff;
-    padding: 0.5em 1em;
+    background-color: pink;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: none;
+    border-bottom: 0.5px solid black;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+}
+nav img {
+    height: 2em;
+    
 }
 
 .logo {
     font-size: 1.5em;
     font-weight: bold;
+    padding:0.9em;
+}
+
+.main-logo {
+    color: white;
+    -webkit-text-stroke: 0.01px black;
+    font-family: "Ultra";
+    text-shadow: 3px 3px 0 black;
+    
+    
 }
 
 ul {
     list-style: none;
     display: flex;
+    font-family: "DM Serif Text";
+    font-size:20px;
 }
 
-    ul li {
-        margin: 0 1em;
-    }
-
-        ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-            ul li a:hover {
-                color: #ff9800;
-            }
-
-
-/* Search Block */
-.search-block {
-    background-color: #f4f4f4;
-    padding: 1em;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+ul li {
+    margin: 0 1em;
+    font-size: 20px;
 }
 
-    .search-block input[type="text"] {
-        width: 60%;
-        padding: 0.5em;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+ul li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-    .search-block button {
-        padding: 0.5em 1em;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+ul li a:hover {
+    color: #ff9800;
+}
 
-        .search-block button:hover {
-            background-color: #ff9800;
-        }
+
+
+
+
 
 /* Results Section */
 .results {
@@ -119,6 +143,7 @@ ul {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    background-color:red;
 }
 
 .profile-info {
@@ -126,19 +151,19 @@ ul {
     width: 100%;
 }
 
-    .profile-info h1 {
-        font-size: 2em;
-        margin-bottom: 0.5em;
-    }
+.profile-info h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
 
-    .profile-info p {
-        font-size: 1.2em;
-        margin: 0.5em 0;
-    }
+.profile-info p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
 
-    .profile-info strong {
-        font-weight: bold;
-    }
+.profile-info strong {
+    font-weight: bold;
+}
 
 .profile-button {
     padding: 10px 20px;
@@ -149,9 +174,9 @@ ul {
     cursor: pointer;
 }
 
-    .profile-button:hover {
-        background-color: #555;
-    }
+.profile-button:hover {
+    background-color: #555;
+}
 
 /* Posts Grid Section */
 .posts-grid {
@@ -164,7 +189,7 @@ ul {
 .post {
     background-color: white;
     padding: 1em;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -186,37 +211,41 @@ ul {
 
 /* Search Block */
 .search-block {
-    background-color: #f4f4f4;
-    padding: 1em;
+    background-color: #C9C4FE;
+    padding: 1.7em;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid black;
 }
 
-    .search-block input[type="text"] {
-        width: 60%;
-        padding: 0.5em;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+.search-block .txt-search {
+    width: 60%;
+    
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    padding: 7px 15px;
+}
 
-    .search-block button {
-        padding: 0.5em 1em;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+.search-block .btn-search {
+    padding: 0.5em 1em;
+    margin-left:15px;
+    background-color: #C1D031;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
 
-        .search-block button:hover {
-            background-color: #ff9800;
-        }
+.search-block button:hover {
+    background-color: #ff9800;
+}
 
 /* Results Section */
 .results {
     padding: 2em;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1em;
 }
 
@@ -234,4 +263,74 @@ ul {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-</style >
+/* Register and Login */
+.login-register {
+    background-color: #C9C4FE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.inner-login-register {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 0.9px solid black;
+    padding: 20px 40px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+
+.logo-login-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:1.5em;
+   
+}
+
+.logo-login-register img{
+    height: 2em;
+    
+}
+
+
+.login-register-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+ 
+
+}
+
+.btn-register {
+    border: 1px solid black;
+    padding: 2px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    background-color: yellow;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lblregister {
+    font-size: 1.8em;
+    border-radius: 15px;
+}
+
+.txt-register {
+    padding: 2px 10px;
+}
+
+li btn-nav {
+    padding: 0.5em 1em;
+    margin-left: 15px;
+    background-color: #C1D031;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+

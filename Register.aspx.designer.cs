@@ -15,13 +15,13 @@ namespace Store
     {
 
         /// <summary>
-        /// lblName control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// txtName control.
@@ -33,15 +33,6 @@ namespace Store
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// lblrgstrUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrgstrUsername;
-
-        /// <summary>
         /// txtrgstrUsername control.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace Store
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtrgstrUsername;
-
-        /// <summary>
-        /// lblrgstrPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrgstrPassword;
 
         /// <summary>
         /// txtrgstrPassword control.
