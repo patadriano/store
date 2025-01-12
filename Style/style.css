@@ -22,17 +22,25 @@
     font-style: normal;
 }
 
+.bowlby-one-regular {
+    font-family: "Bowlby One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "DM Serif Text";
+    background-color:green;
+    font-family: "Climate Crisis";
 }
 
-body {
+/*body {
     font-family: Arial, sans-serif;
-}
+}*/
 
 
 
@@ -124,7 +132,7 @@ ul li a:hover {
     justify-content: center;
 }
 
-/* Profile section */
+ Profile section 
 
 .profile {
     background-color: white;
@@ -178,7 +186,7 @@ ul li a:hover {
     background-color: #555;
 }
 
-/* Posts Grid Section */
+ Posts Grid Section 
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -209,7 +217,7 @@ ul li a:hover {
         margin-top: 0.5em;
     }
 
-/* Search Block */
+ Search Block 
 .search-block {
     background-color: #C9C4FE;
     padding: 1.7em;
@@ -241,7 +249,7 @@ ul li a:hover {
     background-color: #ff9800;
 }
 
-/* Results Section */
+ Results Section 
 .results {
     padding: 2em;
     display: grid;
@@ -311,7 +319,10 @@ ul li a:hover {
     background-color: yellow;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Bowlby One";
 }
+
+
 
 .lblregister {
     font-size: 1.8em;

@@ -2,9 +2,11 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Search Block -->
     <div class="search-block" >
-        
-            <asp:TextBox ID="txtSearch" runat="server" CssClass="txt-search" placeholder="Enter search term" />
+       
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="txt-search" placeholder="Enter search term" />
             <asp:Button  ID="btnSearch"  runat="server"  CssClass="btn-search" Text="Search" OnClick="btnSearch_Click"  />
+       
+           
        <%--  --%>
         
     </div>
@@ -19,7 +21,7 @@
     <div>
          <asp:Repeater ID="rptProducts" runat="server">
             <HeaderTemplate>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 20px; background-color="#FEF6C8">
+                <div class="repeater-results">
             </HeaderTemplate>
             <ItemTemplate>
                 <div style="border: 1px solid black; border-radius:15px; padding: 15px; ; box-shadow: 2px 2px rgba(0, 0, 0, 1); text-align: center; transition: transform 0.3s ease-in-out;">

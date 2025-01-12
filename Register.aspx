@@ -15,19 +15,17 @@
 
  <%--   <webopt:bundlereference runat="server" path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet"  href="~/Style/style.css" />
+    <link rel="stylesheet"  href="~/Style/newstyle.css" />
    <%-- google font--%>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ultra&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Notable&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_mall" />
 </head>
+
+
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -49,15 +47,18 @@
             </Scripts>
         </asp:ScriptManager>
 
-       
-        </nav>
         <nav>
         <div class="logo">
-            <span><asp:Label  runat="server" Text="BlahBlahStore" CssClass="main-logo"/></span>
+             <div class="logo-box"> 
+                <img src="images/star-white.png"/>
+                <asp:Label  runat="server" Text="Store" CssClass="main-logo"/>
+
+                </div>
         </div>
-        <ul>
-             
-           
+        <ul class="circle-list">
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
     </nav>
 
@@ -67,7 +68,7 @@
                     <main class="login-register">
                         <div class="inner-login-register">
                             <div class="logo-login-register">
-                                <img src="images/icon.png"/>
+                                <img src="images/icon-black.png"/>
                             </div>
                              <div class="login-register-form">
                                     <asp:Label ID="Label1" runat="server" CssClass="lblregister">Create your Account</asp:Label>
@@ -81,11 +82,11 @@
                                     <br />
                                     <asp:TextBox ID="txtrgstrPassword" runat="server" CssClass="txt-register" Placeholder="Password" TextMode="Password"></asp:TextBox>
                                     <br />
-                                    <asp:Button ID="btnRegister" runat="server" CssClass="btn-register" Text="Register" OnClick="Register_Click"/>
+                                    <asp:Button ID="btnRegister" runat="server" CssClass="btn-register" Text="Register" OnClick="Register_Click" style=""/>
                                      <br />
                                     <p runat="server"> Already have an account? <a href="~/Default.aspx"  runat="server"> Login here</a></p>
                                      <asp:Label ID="errorrgstrMessage" runat="server" ForeColor="Red" Visible="false"></asp:Label>
-                            </div>
+                             <br /></div>
                         </div>
        
                     </main>
