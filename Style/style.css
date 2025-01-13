@@ -132,7 +132,7 @@ ul li a:hover {
     justify-content: center;
 }
 
- Profile section 
+/* Profile section*/ 
 
 .profile {
     background-color: white;
@@ -344,4 +344,68 @@ li btn-nav {
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
 }
 
+
+
+
+/*------------------------------------------------------*/
+.profile-container {
+    background-color: #f4f4f4;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+/* Profile section*/
+
+.profile {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    max-width: 900px;
+    width: 100%;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    background-color: red;
+}
+
+.profile-info {
+    text-align: left;
+    width: 100%;
+}
+
+.profile-info h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.profile-info p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.profile-info strong {
+    font-weight: bold;
+}
+
+.profile-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .profile-button:hover {
+        background-color: #555;
+    }
 

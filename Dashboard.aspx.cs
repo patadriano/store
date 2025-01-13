@@ -22,14 +22,14 @@ namespace Store
             { 
 
                 BindRepeater();
-                if (Session["UserID"] != null)
-                {
-                    lblUsername.Text = "Hello, " + Session["UserID"];
-                }
-                else
-                {
-                    lblUsername.Text = "Hello, Guest!";
-                }
+                //if (Session["UserID"] != null)
+                //{
+                //    lblUsername.Text = "Hello, " + Session["UserID"];
+                //}
+                //else
+                //{
+                //    lblUsername.Text = "Hello, Guest!";
+                //}
             }
 
             if (Convert.ToBoolean(Cache["WTF"]))
@@ -41,9 +41,9 @@ namespace Store
         protected string GetConnectionString()
 
         {
-            //return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
-            return constring;
+            return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            //string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            //return constring;
         }
         protected void btnSearch_Click(object sender, EventArgs e)
         {

@@ -45,8 +45,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     border: none;
-    border-bottom: 3px solid black;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+    border-bottom: 0px solid black;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
 }
 
     nav img {
@@ -81,7 +81,7 @@ nav {
 
 
 ul {
-    border: 3px solid black;
+    border: 1px solid black;
     border-radius: 30px;
     list-style: none;
     display: flex;
@@ -92,66 +92,77 @@ ul {
     background-color: #8eaddc;
 }
     ul li {
-        padding: 0.4em;
-        padding-left: 1em;
-        padding-right: 1em;
+        padding: 0.1em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
         text-decoration: none;
-        font-family: "Syne";
+        font-family: "Bowlby One";
     }
 
 .circle-list a {
     text-decoration: none;
-    font-family: "Syne";
-    color:black;
-    font-size:15px;
+    font-family: "Poppins";
+    color: black;
+    font-size: 15px;
 }
 
 
 
-    .circle-list li:nth-child(1) {
-        background-color: #f57458;
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px; /* First circle */
-    }
+.circle-list li:nth-child(1) {
+    background-color: #f57458;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px; /* First circle */
+    
+}
 
 .circle-list li:nth-child(2) {
-    background-color: #229e93; /* Second circle */
-    border-left: 3px solid black;
-    border-right: 3px solid black;
+    background-color: #0DABB3; /* Second circle */
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .circle-list li:nth-child(3) {
     background-color: transparent; /* Third circle */
+    
 }
 
 .btn-navbar1 {
     border: none;
     background-color: #f57458;
-    font-family: "Syne";
+    font-family: "Poppins";
+   
 }
 .btn-navbar2 {
     border: none;
     background-color: transparent;
-    font-family: "Syne";
+    font-family: "Poppins";
+    
 }
 
 
 /*dashboard*/
 .repeater-results {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 20px; background-color="#FEF6C8"
+    display: grid;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px;
+    background-color ="#FEF6C8";
 }
 
 .search-block{
     display:flex;
     align-content:center;
     justify-content:center;
-    padding:2em;
+    padding:3em;
 }
 .txt-search {
-    border: 2px solid black;
+    border: 1px solid black;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    padding: 0.8em;
+    padding: 0.5em;
     width: 50em;
     padding-left: 2em;
     font-family: "Poppins";
@@ -159,14 +170,213 @@ ul {
 }
 
 .btn-search {
-    border: 2px solid black;
+    border: 1px solid black;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    padding: 0.8em;
+
+    padding: 0.5em;
     padding-left: 2em;
     padding-right: 2em;
-    font-family: "Syne";
+    font-family: "Poppins";
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     background-color: yellow;
 }
+
+.repeater-posts{
+border: 1px solid black;
+border-radius: 20px;
+padding: 20px; 
+box-shadow: 2px 2px rgba(0, 0, 0, 1); 
+text-align: center; 
+display:flex;
+flex-direction:column;
+background-color:white;
+}
+
+.repeater-img {
+    display: flex;
+    align-content:center;
+    justify-content:center;
+}
+.repeater-textpart {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+    .repeater-textpart h3, .repeater-textpart p {
+        align-self: flex-start; /* Aligns this specific child to the left */
+        margin: 0; /* Optional: Remove default margin */
+    }
+
+.image-post {
+    width: 15em; /* Fixed width */
+    height: 10em; /* Fixed height */
+    object-fit: cover; /* Ensures the image fills the area and crops if necessary */
+    /*display: block;*/
+    border-radius: 15px;
+   
+}
+.repeater-textpart {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.repeater-desc {
+    display: flex;
+    flex-direction: column;
+    
+}
+.btn-checkpost-div {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+.btn-checkpost {
+    padding:0.5em 1em;
+    background-color: yellow;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+
+
+/*
+
+    MODAL ----------------------------------------------
+
+*/
+
+.modal {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: block;
+   
+    left: 45%;
+    top: 45%;
+    transform: translateX(-40%);
+    translateY(-40%);
+    overflow-y: auto; position: fixed;
+    z-index: 1;
+}
+
+.post-header {
+    font-size: 2em;
+    font-family: "Syne";
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+    .post-header h6 {
+        font-family: "Syne"
+    }
+
+.btn-close-popup {
+    padding: 7px 15px;
+    background-color: yellow;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+.post-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.txtbox-popup {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.post-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 2px solid black;
+    padding:15px;
+}
+.btn-save-popup {
+    padding: 7px 15px;
+    border-bottom: 2px solid black;
+    background-color: yellow;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+
+.post-modall {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    z-index: 3;
+    box-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.modall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;height: 100vh;
+    width: 100vw;
+}
+
+/* Background layer with reduced opacity */
+.modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    z-index: 2;
+}
+.fileup-popup {
+   
+}
+
+.profile-container{
+    display:flex;
+    align-content:center;
+    justify-content:center;
+    height:88vh;
+    border-top:2px solid black;
+ 
+}
+
+.profile {
+    background-color: white;
+    display: flex;
+   
+
+}
+.profile-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    justify-content: center;
+    padding: 3em;
+    text-align: center;
+}
+
+.img-profile {
+    width: 10em;
+    height: 10em;
+    border-radius:50%;
+}
+
+.profile-edit {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: yellow;
+    box-shadow: 2px 2px rgba(0, 0, 0, 1);
+    cursor:pointer;
+}
+.lbl-profile{
+    font-size:1em;
+}
+
 

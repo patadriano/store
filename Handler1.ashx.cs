@@ -20,9 +20,9 @@ namespace Store
         public string GetConnectionString()
 
         {
-            //return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-            string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
-            return constring;
+            return System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            //string constring = "Data Source=.\\sqlexpress;Initial Catalog=Practice;Integrated Security=True;Encrypt=False";
+            //return constring;
 
         }
 

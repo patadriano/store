@@ -51,15 +51,6 @@ namespace Store
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl modal;
 
         /// <summary>
-        /// lblItemTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblItemTitle;
-
-        /// <summary>
         /// txtItemTitle control.
         /// </summary>
         /// <remarks>
@@ -69,15 +60,6 @@ namespace Store
         protected global::System.Web.UI.WebControls.TextBox txtItemTitle;
 
         /// <summary>
-        /// lblItemDesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblItemDesc;
-
-        /// <summary>
         /// txtItemDesc control.
         /// </summary>
         /// <remarks>
@@ -85,15 +67,6 @@ namespace Store
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtItemDesc;
-
-        /// <summary>
-        /// lblImgSrc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblImgSrc;
 
         /// <summary>
         /// FileUpload1 control.

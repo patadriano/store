@@ -71,34 +71,41 @@
         </div>
         <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
     <ContentTemplate>--%>
-        <div id="modal" runat="server" class="post" visible="false" style="display: block; position: fixed; z-index: 1;  left: 50%; top:  50%; transform: translateX(-50%); translateY(-50%); background-color: rgba(0, 0, 0, 0.37); overflow-y: auto;" autopostback="true">
-              <div class="post-header">
-                <h6>ADD POST</h6>
-              </div>
-              <div class="post-body">
+        <div  id="modal" runat="server" class="modall" visible="false"  autopostback="true">
+            <div class="modal-background"></div>
+<div id="post-modal"  class="post-modall" >
+                  <div class="post-header">
+                        <h6>ADD POST</h6>
+                      <asp:Button runat="server" CssClass="btn-close-popup" Text="X" OnClick="btnAdd_Click" />
+                    
+                  </div>
+                  <div class="post-body">
             
-                <!-- Title -->
-                <asp:Label ID="lblItemTitle" runat="server"></asp:Label>
-                <asp:TextBox ID="txtItemTitle" runat="server" Placeholder="Product Title"></asp:TextBox>
-                <%--<input type="text" id="title" name="title" placeholder="Enter title here">--%>
-		        <br>
-                <!-- Item Description -->
+                        <!-- Title -->
+                    
+                        <asp:TextBox ID="txtItemTitle" runat="server" CssClass="txtbox-popup" Placeholder="Product Title"></asp:TextBox>
+                        <%--<input type="text" id="title" name="title" placeholder="Enter title here">--%>
+		                <br>
+                        <!-- Item Description -->
              
-                <asp:Label ID="lblItemDesc" runat="server"></asp:Label>
-                <asp:TextBox ID="txtItemDesc" runat="server" TextMode="MultiLine" Rows="4" Columns="50"></asp:TextBox>
+                  
+                        <asp:TextBox ID="txtItemDesc" runat="server" CssClass="txtbox-popup" TextMode="MultiLine"  Placeholder="Product Description" Rows="2" Columns="50"></asp:TextBox>
 
-		        <br>
-                <!-- Image Source -->
-                 <asp:Label ID="lblImgSrc" runat="server"></asp:Label>
-                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                  <asp:Button runat="server" ID="ButtonAdd" Text="Save" OnClick="btnAdd_Click" />
-		        <br>
-              </div>
-              <div class="post-footer">
+		                <br>
+                        <!-- Image Source -->
+                   
+                         <asp:FileUpload ID="FileUpload1" CssClass="fileup-popup" runat="server" />
+                     
+		          
+                  </div>
+                  <div class="post-footer"> <asp:Button runat="server" ID="ButtonAdd" Text="Save"  CssClass="btn-save-popup" OnClick="btnAdd_Click" />
                 
-                  <%-- <asp:Button runat="server" ID="btnSave" Text="Save" OnClick="btnSave_Click" />--%>
-              </div>
+                      <%-- <asp:Button runat="server" ID="btnSave" Text="Save" OnClick="btnSave_Click" />--%>
+                  </div>
+            </div>
         </div>
+            
+         
     <%--    </ContentTemplate>
 </asp:UpdatePanel>--%>
 

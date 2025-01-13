@@ -46,7 +46,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     border: none;
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
 }
 
@@ -71,14 +71,14 @@ nav img {
 .main-logo {
     color: white;
     margin-left: 10px;
-    -webkit-text-stroke: 2px black;
+    /*-webkit-text-stroke: 2px black;*/
     font-family: "Syne";
     /*text-shadow: 3px 3px 0 black;*/
 }
 
 
 ul {
-    border-left: 3px solid black;
+    border-left: 2px solid black;
     list-style: none;
     display: flex;
     font-size: 20px;
@@ -100,7 +100,7 @@ ul {
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 3px solid black;
+    border: 2px solid black;
     padding: 20px 40px;
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
     border-radius: 20px;
@@ -125,7 +125,7 @@ ul {
 }
 
 .btn-register {
-    border: 3px solid black;
+    border:2px solid black;
     padding: 2px;
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     background-color: yellow;
@@ -159,7 +159,7 @@ ul {
         width: 20px; /* Set the size of the circle */
         height: 20px; /* Width and height must be equal for a circle */
          /* Background color of the circle */
-        border: 3px solid black;
+        border: 2px solid black;
         border-radius: 50%; /* Makes the shape circular */
         margin-right: 20px; /* Add spacing between circles */
        
